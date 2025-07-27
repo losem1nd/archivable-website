@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Archivable Website</title>
+    <style></style>
+</head>
+<body>
+
+    <!-- Header section -->
+    <div class="header">
+        Archivable Website v4
+    </div>
+
+    <!-- Main content container -->
+    <div class="main-container">
+        <!-- Sidebar navigation -->
+        <div class="sidebar" id="sidebar">
+            <a class="nav-link active" data-tab="gaming">Gaming</a>
+            <a class="nav-link" data-tab="resources">Computer Tutorial</a>
+            <a class="nav-link" data-tab="about">About</a>
+        </div>
+
+        <!-- Main content area -->
+        <div class="content">
+            <!-- Content for the Gaming tab -->
+            <div id="gaming" class="tab-content">
+                <div class="content-item">
+                    <div class="box"></div>
+                    <div class="text">Object 1</div>
+                </div>
+                <div class="content-item">
+                    <div class="box"></div>
+                    <div class="text">Object 2</div>
+                </div>
+            </div>
+            <!-- Content for the Helpful Resources tab -->
+            <div id="resources" class="tab-content hidden">
+                <div class="content-item">
+                    <div class="box"></div>
+                    <div class="text">Object 3</div>
+                </div>
+                <div class="content-item">
+                    <div class="box"></div>
+                    <div class="text">Object 4</div>
+                </div>
+            </div>
+            <div id="about" class="tab-content hidden">
+                <div class="content-item-2">
+                    <div class="text">Archivable Website v4</div>
+                    <hr>
+                    <div class="text">This second website is only a developer beta version, and all buttons in it are disabled. We predict that this version will be officially released as a public beta in v3.3. Stay tuned.</div>
+                    <br><br><br>
+                    <hr>
+                    <div class="text-2">About (Info):</div>
+                    <div class="text">Build By: AK (more details go to main website)</div>
+                    <div class="text">Template by: LefiWEB</div>
+                    <div class="text">Assist Created by: LefiWEB v104, LefiEngine v98-2, LefiWEB-Preset</div>
+                    <div class="text">Designed Assistant: LefiWEB-Decorate v2, LefiEngie v98-2</div>
+                    <div class="text">Public at: GitHub</div>
+                    <div class="text">Web Version: v0.1</div>
+                </div>
+            </div>
+        </div>
+    </div><script src="script.js"></script>
+    <script>
+        ['keydown', 'keypress', 'keyup'].forEach(evt => {
+          document.addEventListener(evt, function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+          }, true);
+        });
+
+        document.addEventListener('contextmenu', function (e) {
+          e.preventDefault();
+        });
+
+        document.addEventListener('copy', function (e) {
+          e.preventDefault();
+        });
+
+        document.addEventListener('paste', function (e) {
+          e.preventDefault();
+        });
+
+        document.addEventListener('selectstart', function (e) {
+          e.preventDefault();
+        });
+
+        document.addEventListener('touchstart', function (e) {
+          e.preventDefault();
+        }, { passive: false });
+
+        document.addEventListener('touchmove', function (e) {
+          e.preventDefault();
+        }, { passive: false });
+
+        document.addEventListener('gesturestart', function (e) {
+          e.preventDefault();
+        });
+
+        document.addEventListener('gesturechange', function (e) {
+          e.preventDefault();
+        });
+
+        document.addEventListener('gestureend', function (e) {
+          e.preventDefault();
+        });
+
+        const navLinks = document.querySelectorAll('.nav-link');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                const tabToShow = this.getAttribute('data-tab');
+
+                navLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+
+                tabContents.forEach(content => {
+                    if (content.id === tabToShow) {
+                        content.classList.remove('hidden');
+                    } else {
+                        content.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
